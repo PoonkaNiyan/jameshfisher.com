@@ -79,3 +79,4 @@ int main(void) {
 ```
 
 It turns out this one is just fine, because ... string literals are lvalues! When we write `"foo"`, we reserve memory for that string in an addressable location.
+Notes by Rathinavelu Name of function, and of an array are address (pointer) constants and so, being constants, can not appear on LHS, in C. "soemthing" is a string constant ( in some constant pool maintained internally for sake of efficiency) whose address is not legally obtainable i.e. & " something" is syntax error. Implementations are not consistently behaving; not a language issue.  C++ has different interpretation for lvalues and rvalues.  In C: x=8; talks of lvalue of x; y=x talks of rvalue of x.   If we have  p and q as pointers defined and initialized ,  *p =*q ; is valid ;*p is lvalue of what p points to; *q is rvalue of what q points to.
